@@ -6,9 +6,16 @@
 
     <bean id="steckerlfischFinder" class="de.atabey.sample.steckerlfisch.model.SteckerlfischFinder">
         <constructor-arg ref="steckerlfischStandRepository"/>
+        <constructor-arg ref="liveService"/>
     </bean>
 
     <jpa:repositories base-package="de.atabey.sample.steckerlfisch.model" />
 
+    <beans profile="prod, dev">
+        <bean id="liveService" class="de.atabey.sample.steckerlfisch.model.RealLiveService"/>
+    </beans>
 
+    <beans profile="local, test">
+        <bean id="liveService" class="de.atabey.sample.steckerlfisch.model.MockLiveService"/>
+    </beans>
 </beans>
