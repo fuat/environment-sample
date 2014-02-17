@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * @author Fuat Atabey
  */
-@ActiveProfiles("test")
+@ActiveProfiles({"embeddedDB","mock"})
 @ContextConfiguration(locations = {"classpath:de/atabey/sample/steckerlfisch/test-context.xml"
         , "classpath:/de/atabey/sample/steckerlfisch/domain.xml"})
 public class SteckerlfishFinderIntegrationTest extends AbstractTransactionalJUnit4SpringContextTests {

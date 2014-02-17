@@ -11,11 +11,11 @@
 
     <jpa:repositories base-package="de.atabey.sample.steckerlfisch.model" />
 
-    <beans profile="prod, dev">
+    <beans profile="real">
         <bean id="liveService" class="de.atabey.sample.steckerlfisch.model.RealLiveService"/>
     </beans>
 
-    <beans profile="local, test">
+    <beans profile="mock">
         <bean id="liveService" class="de.atabey.sample.steckerlfisch.model.MockLiveService"/>
     </beans>
 </beans>
