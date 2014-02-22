@@ -5,7 +5,7 @@
     <groupId>de.atabey.samples</groupId>
     <artifactId>environment-samples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
 
     <name>Spring environment abstraction sample project</name>
     <inceptionYear>2014</inceptionYear>
@@ -35,7 +35,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
