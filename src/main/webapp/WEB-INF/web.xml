@@ -1,0 +1,36 @@
+<web-app>
+
+    <context-param>
+        <param-name>contextInitializerClasses</param-name>
+        <param-value>de.atabey.sample.steckerlfisch.application.ApplicationInitializer</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:/de/atabey/sample/steckerlfisch/domain.xml
+            classpath:/de/atabey/sample/steckerlfisch/infrastructure.xml
+        </param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>steckerl</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                classpath:/de/atabey/sample/steckerlfisch/web-mvc.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>steckerl</servlet-name>
+        <url-pattern>/steckerl/*</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+</web-app>
